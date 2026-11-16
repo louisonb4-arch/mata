@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://mata-site-steel.vercel.app/sitemap.xml
