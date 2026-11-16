@@ -303,7 +303,6 @@
       tl.fromTo(p, { x: fromX, y: fromY, rotation: rand(-50, 50), scale: 1.25 },
         { x: 0, y: 0, rotation: finalRot[i], scale: 1, duration: 1, ease: 'power2.out' }, i * 0.08);
     });
-    tl.from('.vitrine__link', { opacity: 0, y: 30, duration: 0.4 }, 0.9);
   });
 
   mm.add('(max-width: 1080px)', () => {
