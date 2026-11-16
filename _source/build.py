@@ -59,7 +59,7 @@ def defer_block(html, marker):
 html, n = re.subn(r'<img data-sizes="([^"]+)" src="assets/img/([a-z\-]+)\.webp"([^>]*)>', picture, html)
 
 html = defer_panels(html)
-html = defer_block(html, '<div class="hero__mini">')  # mini-photo du hero : après le chargement
+# (mini-photo du hero : lazy natif, pas de différé JS → jamais de cadre vide)
 
 # préchargement de l'image LCP desktop (sur mobile, le LCP est le texte du hero)
 hero_av = variants('hero-pain', 'avif')
