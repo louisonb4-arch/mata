@@ -144,6 +144,11 @@
   .vitrine__title { font-size: clamp(56px, 18vw, 88px); }
   .vitrine__title small { font-size: 11px; margin-top: 16px; }
   .ph:nth-of-type(n+7) { display: none; }
+  .vitrine__title .vl { display: inline-block; will-change: transform; }
+  .ph { cursor: pointer; transition: box-shadow .55s var(--expo); }
+  .ph.is-lifted { box-shadow: 0 46px 80px -24px rgba(0, 0, 0, .85); }
+  .vitrine__hint { display: block; grid-column: 1 / -1; margin-top: 30px; text-align: center; font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgba(255, 251, 239, .7); }
+  .vitrine__link { margin-top: 18px; }
 
   .order { padding: 90px 0; }
   .order .h2 { font-size: clamp(52px, 16vw, 76px); margin-top: 16px; }

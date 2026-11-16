@@ -307,7 +307,84 @@
 
   mm.add('(max-width: 1080px)', () => {
     gsap.from('.counter__track', { x: 60, opacity: 0, duration: 1.1, ease: 'expo.out', scrollTrigger: { trigger: '.counter__pin', start: 'top 85%', once: true } });
+  });
+
+  mm.add('(min-width: 681px) and (max-width: 1080px)', () => {
     gsap.from('.ph', { y: 50, opacity: 0, duration: 0.9, stagger: 0.06, ease: 'expo.out', scrollTrigger: { trigger: '.vitrine__stage', start: 'top 70%', once: true } });
+  });
+
+  /* ---------- Vitrine sur téléphone : le titre tombe lettre par lettre,
+     puis les photos sont « distribuées » depuis une pile, au rythme du scroll.
+     Un tap sur une photo la soulève (re-tap ou tap ailleurs pour la reposer). ---------- */
+  mm.add('(max-width: 680px)', () => {
+    const stage = $('.vitrine__stage');
+    const title = $('.vitrine__title > span');
+    const phs = $$('.ph').filter(p => getComputedStyle(p).display !== 'none');
+
+    // 1) titre : lettres découpées (une seule fois), chute + rebond comme le logo
+    if (!title.querySelector('.vl')) {
+      [...title.childNodes].forEach(n => {
+        if (n.nodeType !== 3) return;
+        const frag = document.createDocumentFragment();
+        [...n.textContent].forEach(ch => {
+          if (ch === ' ') { frag.append(' '); return; }
+          const s = document.createElement('span');
+          s.className = 'vl'; s.textContent = ch;
+          frag.append(s);
+        });
+        n.replaceWith(frag);
+      });
+    }
+    const letters = $$('.vl', title);
+    gsap.fromTo(letters,
+      { yPercent: -160, rotation: () => rand(-35, 35), opacity: 0 },
+      { yPercent: 0, rotation: () => rand(-4, 4), opacity: 1, duration: 0.9, ease: 'back.out(2.2)', stagger: 0.05,
+        scrollTrigger: { trigger: title, start: 'top 82%', once: true } });
+
+    // 2) photos : toutes empilées au centre, puis distribuées sur la table
+    const pileOffset = (p, axis) => {
+      const s = stage.getBoundingClientRect(), r = p.getBoundingClientRect();
+      const gx = gsap.getProperty(p, 'x'), gy = gsap.getProperty(p, 'y');
+      const firstTop = phs[0].getBoundingClientRect().top - gsap.getProperty(phs[0], 'y');
+      return axis === 'x'
+        ? (s.left + s.width / 2) - (r.left - gx + r.width / 2)
+        : (firstTop + r.height * 0.9) - (r.top - gy + r.height / 2);
+    };
+    const tilt = [-3, 3, 2, -3, -2, 3];
+    const lift = [0, 14, 0, 14, 0, 14];
+    phs.forEach((p, i) => gsap.set(p, { zIndex: phs.length - i }));
+    const deal = gsap.timeline({ scrollTrigger: { trigger: phs[0], start: 'top 68%', end: 'top 8%', scrub: 0.6, invalidateOnRefresh: true } });
+    phs.forEach((p, i) => {
+      deal.fromTo(p,
+        { x: () => pileOffset(p, 'x'), y: () => pileOffset(p, 'y'), rotation: () => rand(-14, 14), scale: 0.92 },
+        { x: 0, y: lift[i], rotation: tilt[i], scale: 1, duration: 1, ease: 'power3.out' }, i * 0.16);
+    });
+
+    // 3) tap : on soulève la photo (re-tap, tap ailleurs ou scroll pour la reposer)
+    let lifted = null;
+    const drop = () => {
+      if (!lifted) return;
+      const i = phs.indexOf(lifted);
+      lifted.classList.remove('is-lifted');
+      gsap.to(lifted, { x: 0, y: lift[i], rotation: tilt[i], scale: 1, zIndex: phs.length - i, duration: 0.55, ease: 'expo.out', overwrite: 'auto' });
+      lifted = null;
+    };
+    const onTap = e => {
+      const p = e.currentTarget, was = p === lifted;
+      drop();
+      if (was) return;
+      e.stopPropagation();
+      if (deal.scrollTrigger.progress < 0.98) return;
+      const r = p.getBoundingClientRect();
+      lifted = p;
+      p.classList.add('is-lifted');
+      gsap.to(p, { x: (innerWidth / 2 - (r.left + r.width / 2)) * 0.55, rotation: 0, scale: 1.34, zIndex: 30, duration: 0.6, ease: 'back.out(1.6)', overwrite: 'auto' });
+    };
+    const onDoc = () => drop();
+    phs.forEach(p => p.addEventListener('click', onTap));
+    document.addEventListener('click', onDoc);
+    addEventListener('scroll', onDoc, { passive: true });
+    return () => { phs.forEach(p => p.removeEventListener('click', onTap)); document.removeEventListener('click', onDoc); removeEventListener('scroll', onDoc); drop(); };
   });
 
   /* ---------- Midi, infos ---------- */

@@ -355,6 +355,7 @@ h1, h2, h3, p, figure { margin: 0; }
 .ph:nth-of-type(6) { width: 16vw; aspect-ratio: 4/5; left: 21vw; bottom: -5vh; }
 .ph:nth-of-type(7) { width: 14vw; aspect-ratio: 1; right: 20vw; bottom: 4vh; }
 .ph:nth-of-type(8) { width: 16vw; aspect-ratio: 4/5; right: 5vw; bottom: -6vh; }
+.vitrine__hint { display: none; }
 .vitrine__link { position: absolute; z-index: 5; left: 50%; bottom: 7vh; transform: translateX(-50%); box-shadow: 0 18px 40px -16px rgba(0, 0, 0, .7); }
 
 /* ==========================================================================
@@ -575,6 +576,11 @@ h1, h2, h3, p, figure { margin: 0; }
   .vitrine__title { font-size: clamp(56px, 18vw, 88px); }
   .vitrine__title small { font-size: 11px; margin-top: 16px; }
   .ph:nth-of-type(n+7) { display: none; }
+  .vitrine__title .vl { display: inline-block; will-change: transform; }
+  .ph { cursor: pointer; transition: box-shadow .55s var(--expo); }
+  .ph.is-lifted { box-shadow: 0 46px 80px -24px rgba(0, 0, 0, .85); }
+  .vitrine__hint { display: block; grid-column: 1 / -1; margin-top: 30px; text-align: center; font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgba(255, 251, 239, .7); }
+  .vitrine__link { margin-top: 18px; }
 
   .order { padding: 90px 0; }
   .order .h2 { font-size: clamp(52px, 16vw, 76px); margin-top: 16px; }
