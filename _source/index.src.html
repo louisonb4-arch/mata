@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mata Boulangerie — Boulangerie bio au levain à Nantes</title>
+  <meta name="description" content="Mata, boulangerie biologique au levain naturel rue de Rieux à Nantes (Champ de Mars, Cité des Congrès) : pains au levain, viennoiseries maison, pâtisserie boulangère et casse-croûte du midi.">
+  <meta name="theme-color" content="#ffed99">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mata Boulangerie — Bio, levain, Nantes">
+  <meta property="og:description" content="Pains au levain, viennoiseries maison, pâtisserie boulangère et casse-croûte. 6 rue de Rieux, Nantes.">
+  <meta property="og:image" content="assets/img/og.jpg">
+  <meta property="og:locale" content="fr_FR">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <!--PRELOAD-->
+  <link rel="preload" href="assets/fonts/anton.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/jost.woff2" as="font" type="font/woff2" crossorigin>
+  <!--CSS-->
+  <script>
+    /* JS chargé après l'affichage (ou à la première interaction) : la bande passante va d'abord au texte et à l'image du hero */
+    (function () {
+      var done = false;
+      function load() { if (done) return; done = true; var s = document.createElement('script'); s.src = 'assets/js/app.min.js?v=<!--JSV-->'; document.head.appendChild(s); }
+      addEventListener('load', function () { (window.requestIdleCallback || setTimeout)(load, { timeout: 800 }); });
+      ['pointerdown', 'keydown', 'wheel', 'touchstart'].forEach(function (e) { addEventListener(e, load, { once: true, passive: true }); });
+      document.addEventListener('click', function (e) {
+        if (done && window.__mataReady) return;
+        var b = e.target.closest && e.target.closest('.burger');
+        if (b) { var o = document.documentElement.classList.toggle('menu-open'); b.setAttribute('aria-expanded', String(o)); }
+      });
+    })();
+  </script>
+  <script>try{if('scrollRestoration' in history&&!location.hash)history.scrollRestoration='manual';if(/[?&]intro=0/.test(location.search)||sessionStorage.getItem('mata-intro')||matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('no-intro')}catch(e){}</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Bakery",
+    "name": "Mata Boulangerie",
+    "description": "Boulangerie biologique au levain naturel : pains, viennoiseries maison, pâtisserie boulangère et casse-croûte.",
+    "image": "assets/img/facade.webp",
+    "telephone": "+33970669583",
+    "email": "contact@boulangeriemata.fr",
+    "priceRange": "€",
+    "address": { "@type": "PostalAddress", "streetAddress": "6 rue de Rieux", "postalCode": "44000", "addressLocality": "Nantes", "addressCountry": "FR" },
+    "geo": { "@type": "GeoCoordinates", "latitude": 47.21109, "longitude": -1.5452661 },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "06:30", "closes": "19:45" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "07:00", "closes": "19:00" }
+    ],
+    "servesCuisine": ["Boulangerie", "Viennoiserie", "Pâtisserie", "Sandwichs"],
+    "sameAs": ["https://www.instagram.com/boulangeriemata/"]
+  }
+  </script>
+</head>
+<body>
+
+<!-- ============ INTRO ============ -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro__logo logo"><!--LOGO--></div>
+  <div class="intro__bar"><i></i></div>
+  <p class="intro__meta"><span>Nantes</span><span>Levain naturel</span><span>Bio</span></p>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="hd" id="hd">
+  <div class="wrap">
+    <a href="#top" class="hd__logo logo" aria-label="Mata Boulangerie — retour en haut"><!--LOGO--></a>
+    <nav class="hd__nav" aria-label="Navigation principale">
+      <a href="#pain">Le levain</a>
+      <a href="#comptoir">Le comptoir</a>
+      <a href="#midi">Le midi</a>
+      <a href="#fournil">Le fournil</a>
+      <a href="#infos">Infos</a>
+    </nav>
+    <div class="hd__right">
+      <span class="status" data-status><i></i><b>Horaires</b></span>
+      <a class="btn btn--sm" href="https://www.google.com/maps/dir/?api=1&amp;destination=MATA+Boulangerie+6+Rue+de+Rieux+Nantes" target="_blank" rel="noopener">Itinéraire</a>
+      <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="menu" id="menu">
+  <nav class="menu__links" aria-label="Menu mobile">
+    <a href="#pain">Le levain</a>
+    <a href="#comptoir">Le comptoir</a>
+    <a href="#midi">Le midi</a>
+    <a href="#fournil">Le fournil</a>
+    <a href="#infos">Infos</a>
+  </nav>
+  <div class="menu__foot">
+    6 rue de Rieux, 44000 Nantes<br>
+    Lun–Ven 6h30–19h45 · Sam 7h–19h<br>
+    <div class="menu__cta">
+      <a class="btn btn--sm" href="tel:+33970669583">Appeler</a>
+      <a class="btn btn--sm btn--ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=MATA+Boulangerie+6+Rue+de+Rieux+Nantes" target="_blank" rel="noopener">Itinéraire</a>
+    </div>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__letters" aria-hidden="true">
+      <span style="--s:26vw;--r:-14deg;left:-3vw;top:6vh" data-depth="-0.25">M</span>
+      <span style="--s:18vw;--r:11deg;left:38vw;top:-6vh" data-depth="0.18">A</span>
+      <span style="--s:22vw;--r:-6deg;right:-2vw;top:44vh" data-depth="-0.35">T</span>
+      <span style="--s:15vw;--r:18deg;left:30vw;bottom:-4vh" data-depth="0.3">A</span>
+    </div>
+
+    <div class="hero__inner wrap">
+      <div class="hero__text">
+        <p class="eyebrow" data-hero>Boulangerie biologique · Nantes</p>
+        <h1 class="hero__title" id="hero-title">
+          <span class="line"><span>Du levain.</span></span>
+          <span class="line"><span>Du beurre.</span></span>
+          <span class="line"><span>Du temps.</span></span>
+        </h1>
+        <p class="hero__lead" data-hero>Pains au levain naturel, viennoiseries maison, pâtisserie boulangère et casse-croûte du midi. Tout sort de notre fournil, rue de Rieux, entre le Champ de Mars et la Cité des Congrès.</p>
+        <div class="hero__cta" data-hero>
+          <a class="btn" href="#comptoir">Voir le comptoir
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12 12 4M5 4h7v7"/></svg></a>
+          <a class="btn btn--ghost" href="#infos">Nous trouver</a>
+        </div>
+      </div>
+
+      <figure class="hero__media">
+        <div class="hero__frame"><img data-sizes="(max-width: 680px) 82vw, (max-width: 820px) 440px, min(520px, 48vh)" src="assets/img/hero-pain.webp" alt="Miche au levain tenue par un boulanger en tablier" width="1080" height="1080" fetchpriority="high" data-parallax="0.12"></div>
+        <div class="hero__mini"><img data-sizes="(max-width: 820px) 34vw, 220px" src="assets/img/croissant-coupe.webp" alt="Croissant coupé montrant son feuilletage" width="1080" height="1080" loading="lazy"></div>
+        <figcaption class="sticker">100 %<br>levain<small>Farines bio</small></figcaption>
+      </figure>
+    </div>
+
+    <div class="hero__foot wrap" data-hero>
+      <span>6 rue de Rieux — Nantes</span>
+      <span>Lun–Ven 6h30–19h45 · Sam 7h–19h</span>
+      <span class="hero__scroll"><i></i>Défiler</span>
+    </div>
+  </section>
+
+  <!-- ============ MANIFESTE ============ -->
+  <section class="manif" id="pain" aria-labelledby="manif-title">
+    <div class="wrap">
+      <h2 class="eyebrow" id="manif-title">Notre façon de faire</h2>
+      <p class="manif__text" data-words>Chez Mata, tout part du <em>levain</em>. Des farines <em>bio</em>, une fermentation <em>longue</em>, du beurre de Montaigu, des œufs plein air. Et des mains qui façonnent chaque pièce, sur place, dans le fournil de la rue de Rieux.</p>
+      <ul class="facts">
+        <li><b data-count="100" data-suffix=" %">100 %</b><span>Levain naturel</span></li>
+        <li><b>Bio</b><span>Boulangerie biologique</span></li>
+        <li><b data-count="2022">2022</b><span>Ouverture rue de Rieux</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ COMPTOIR ============ -->
+  <section class="counter" id="comptoir" aria-labelledby="counter-title">
+    <div class="counter__head wrap">
+      <div>
+        <p class="eyebrow">Au comptoir</p>
+        <h2 class="h2" id="counter-title" style="margin-top:20px"><span class="dance" data-dance>Quatre rayons,</span><br><span class="dance" data-dance>un seul levain.</span></h2>
+      </div>
+      <p class="lead">Du pain du matin au casse-croûte de midi, la vitrine change avec les saisons. Ce qui ne change pas : le levain, le beurre et le temps de pousse.</p>
+    </div>
+
+    <div class="counter__pin">
+      <div class="counter__track">
+        <article class="panel">
+          <div class="panel__media"><img data-sizes="(max-width: 680px) 84vw, (max-width: 1080px) 46vw, min(43vw, 580px)" src="assets/img/miche.webp" alt="Miche au levain bien grignée" loading="lazy" width="1080" height="1080"></div>
+          <div class="panel__pop"><img data-sizes="240px" src="assets/img/mie.webp" alt="Mie alvéolée d'un pain au levain" loading="lazy" width="1080" height="1080"></div>
+          <div class="panel__body"><span class="panel__num" data-num="01" aria-hidden="true"></span>
+            <h3>Pains<br>au levain</h3>
+            <p>Levain naturel, farines bio et fermentation longue : une croûte qui chante, une mie qui se garde.</p>
+            <ul class="tags"><li>Miches</li><li>Couronnes</li><li>Pain de mie</li><li>Focaccia</li></ul></div>
+        </article>
+        <article class="panel">
+          <div class="panel__media"><img data-sizes="(max-width: 680px) 84vw, (max-width: 1080px) 46vw, min(43vw, 580px)" src="assets/img/viennoiseries.webp" alt="Vitrine de viennoiseries maison" loading="lazy" width="1080" height="1080"></div>
+          <div class="panel__pop"><img data-sizes="240px" src="assets/img/escargot.webp" alt="Escargot feuilleté sur une assiette" loading="lazy" width="1080" height="1080"></div>
+          <div class="panel__body"><span class="panel__num" data-num="02" aria-hidden="true"></span>
+            <h3>Viennoiserie<br>maison</h3>
+            <p>Feuilletage fait ici, beurre de Montaigu. Croissants, pains au chocolat et créations de saison.</p>
+            <ul class="tags"><li>Croissants</li><li>Pains au chocolat</li><li>Escargots</li><li>Saison</li></ul></div>
+        </article>
+        <article class="panel">
+          <div class="panel__media"><img data-sizes="(max-width: 680px) 84vw, (max-width: 1080px) 46vw, min(43vw, 580px)" src="assets/img/tarte-pommes.webp" alt="Tarte aux pommes en rosace" loading="lazy" width="1080" height="1080"></div>
+          <div class="panel__pop"><img data-sizes="240px" src="assets/img/tarte-citron.webp" alt="Part de tarte au citron meringuée devant l'enseigne Mata" loading="lazy" width="1080" height="1350"></div>
+          <div class="panel__body"><span class="panel__num" data-num="03" aria-hidden="true"></span>
+            <h3>Pâtisserie<br>boulangère</h3>
+            <p>Des gâteaux de boulanger, francs et généreux. Tartes de saison, et la galette frangipane quand janvier arrive.</p>
+            <ul class="tags"><li>Tartes</li><li>Galettes</li><li>Gâteaux</li></ul></div>
+        </article>
+        <article class="panel">
+          <div class="panel__media"><img data-sizes="(max-width: 680px) 84vw, (max-width: 1080px) 46vw, min(43vw, 580px)" src="assets/img/sandwiches.webp" alt="Sandwichs au levain en vitrine" loading="lazy" width="1080" height="1350"></div>
+          <div class="panel__pop"><img data-sizes="240px" src="assets/img/focaccia.webp" alt="Pile de focaccias tenue à la main" loading="lazy" width="1050" height="1400"></div>
+          <div class="panel__body"><span class="panel__num" data-num="04" aria-hidden="true"></span>
+            <h3>Casse-<br>croûte</h3>
+            <p>Sandwichs sur pain maison, focaccias garnies, salades et feuilletés salés, à emporter pour midi.</p>
+            <ul class="tags"><li>Sandwichs</li><li>Focaccia</li><li>Salades</li><li>Sausage roll</li></ul></div>
+        </article>
+      </div>
+    </div>
+    <div class="counter__nav wrap" aria-hidden="true"><span><b data-counter-idx>01</b> / 04</span><i><b data-counter-bar></b></i><span class="hint">Glissez</span></div>
+  </section>
+
+  <!-- ============ LE MIDI ============ -->
+  <section class="midi" id="midi" aria-labelledby="midi-title">
+    <div class="wrap midi__grid">
+      <div>
+        <p class="eyebrow">Le midi</p>
+        <h2 class="h2" id="midi-title"><span class="dance" data-dance>Le casse-croûte</span><br><span class="dance" data-dance>sérieux.</span></h2>
+        <p class="midi__intro">Avant d'arriver en vitrine, chaque sandwich est testé en interne jusqu'au bon équilibre : une protéine, une sauce maison, des légumes frais, sur notre pain. Notre signature : le Montagnard à la coppa.</p>
+        <ul class="carte">
+          <li><span>Jambon-beurre</span><i></i><b>4,70 €</b></li>
+          <li><span>Jambon, comté, cornichons</span><i></i><b>5,50 €</b></li>
+          <li><span>Tomate, chèvre, miel</span><i></i><b>5,60 €</b></li>
+          <li><span>Poulet, mayonnaise maison, estragon</span><i></i><b>5,70 €</b></li>
+          <li><span>Focaccia garnie</span><i></i><b>6,00 €</b></li>
+          <li><span>Sandwich vegan <em>Recette du moment</em></span><i></i><b>6,00 €</b></li>
+        </ul>
+        <p class="carte__note">Carte indicative : les recettes tournent avec les saisons. Demandez la carte du jour en boutique.</p>
+      </div>
+
+      <div class="deck" data-deck role="button" tabindex="0" aria-label="Faire défiler les photos du midi">
+        <figure class="deck__card"><img data-sizes="(max-width: 1080px) 82vw, 460px" src="assets/img/sandwich.webp" alt="Sandwich garni tenu à la main" loading="lazy" width="1080" height="1080"><figcaption>Sandwich du jour</figcaption></figure>
+        <figure class="deck__card"><img data-sizes="(max-width: 1080px) 82vw, 460px" src="assets/img/focaccia-pile.webp" alt="Focaccias empilées" loading="lazy" width="1050" height="1400"><figcaption>Focaccia</figcaption></figure>
+        <figure class="deck__card"><img data-sizes="(max-width: 1080px) 82vw, 460px" src="assets/img/salade.webp" alt="Barquette de salade devant l'enseigne Mata" loading="lazy" width="1050" height="1400"><figcaption>Salade</figcaption></figure>
+        <figure class="deck__card"><img data-sizes="(max-width: 1080px) 82vw, 460px" src="assets/img/casse-croute.webp" alt="Bun garni tenu à deux mains" loading="lazy" width="1080" height="608"><figcaption>Bun maison</figcaption></figure>
+        <p class="deck__hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12a8 8 0 1 0 2.3-5.6M4 4v4h4"/></svg>Cliquez pour piocher</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOURNIL ============ -->
+  <section class="story" id="fournil" aria-labelledby="story-title">
+    <div class="wrap story__grid">
+      <figure class="story__big reveal-img"><img data-sizes="(max-width: 1080px) 92vw, 50vw" src="assets/img/fournil.webp" alt="Boulanger enfournant les pains" loading="lazy" width="1080" height="720"></figure>
+      <div class="story__text">
+        <p class="eyebrow">Le fournil</p>
+        <h2 class="h2" id="story-title"><span class="dance" data-dance>De la finance</span><br><span class="dance" data-dance>au pétrin.</span></h2>
+        <p>Avant le levain, Charles-Henry Mata travaillait dans la finance. En 2022, il change de métier et ouvre sa boulangerie biologique rue de Rieux, au pied de la Cité des Congrès.</p>
+        <p>Ici, pas de raccourci : levain naturel, farines bio, fermentation longue et feuilletage maison. Le pain, la viennoiserie et le casse-croûte sortent du même fournil, avec la même exigence, du lundi au samedi.</p>
+        <ul class="badges">
+          <li>Référencée Gault&amp;Millau</li>
+          <li>Boulangerie biologique</li>
+          <li>Fait sur place</li>
+        </ul>
+      </div>
+      <figure class="story__small reveal-img"><img data-sizes="(max-width: 1080px) 82vw, 30vw" src="assets/img/equipe.webp" alt="L'équipe de Mata dans la boutique" loading="lazy" width="1080" height="810"></figure>
+    </div>
+  </section>
+
+  <!-- ============ VITRINE ============ -->
+  <section class="vitrine" aria-labelledby="vitrine-title">
+    <div class="vitrine__stage">
+      <h2 class="vitrine__title" id="vitrine-title"><span>Dans la<br>vitrine<small>Ce qui sort du four cette semaine</small></span></h2>
+      <figure class="ph"><img data-sizes="(max-width: 1080px) 46vw, 17vw" src="assets/img/couronne.webp" alt="Couronne au levain" loading="lazy" width="1050" height="1400"></figure>
+      <figure class="ph"><img data-sizes="(max-width: 1080px) 46vw, 15vw" src="assets/img/roule.webp" alt="Viennoiserie roulée" loading="lazy" width="1080" height="1080"></figure>
+      <figure class="ph"><img data-sizes="(max-width: 1080px) 46vw, 17vw" src="assets/img/portrait-pain.webp" alt="Boulanger cachant son visage derrière une miche" loading="lazy" width="1050" height="1400"></figure>
+      <figure class="ph"><img data-sizes="(max-width: 1080px) 46vw, 15vw" src="assets/img/pains.webp" alt="Pains au levain farinés" loading="lazy" width="1080" height="1080"></figure>
+      <figure class="ph"><img data-sizes="(max-width: 1080px) 46vw, 15vw" src="assets/img/feuilletage.webp" alt="Viennoiserie feuilletée en gros plan" loading="lazy" width="1080" height="1350"></figure>
+      <figure class="ph"><img data-sizes="(max-width: 1080px) 46vw, 17vw" src="assets/img/petit-dej.webp" alt="Petit-déjeuner avec viennoiseries et jus" loading="lazy" width="1080" height="1350"></figure>
+      <figure class="ph"><img data-sizes="(max-width: 1080px) 46vw, 14vw" src="assets/img/pains-speciaux.webp" alt="Pains spéciaux en vitrine" loading="lazy" width="1080" height="1350"></figure>
+      <figure class="ph"><img data-sizes="(max-width: 1080px) 46vw, 16vw" src="assets/img/boule-farinee.webp" alt="Boule au levain farinée" loading="lazy" width="1080" height="1350"></figure>
+      <a class="btn btn--sun vitrine__link" href="https://www.instagram.com/boulangeriemata/" target="_blank" rel="noopener">@boulangeriemata
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12 12 4M5 4h7v7"/></svg></a>
+    </div>
+  </section>
+
+  <!-- ============ COMMANDES ============ -->
+  <section class="order" id="commandes" aria-labelledby="order-title">
+    <div class="order__bars" aria-hidden="true">
+      <span style="height:34vh;left:-1vw;top:-12vh;transform:rotate(-28deg)" data-depth="0.2"></span>
+      <span style="height:26vh;left:50vw;top:14vh;transform:rotate(20deg)" data-depth="-0.15"></span>
+      <span style="height:30vh;right:3vw;top:-10vh;transform:rotate(22deg)" data-depth="0.25"></span>
+      <span style="height:16vh;left:46vw;bottom:2vh;transform:rotate(-36deg)" data-depth="-0.2"></span>
+    </div>
+    <div class="wrap order__inner">
+      <div>
+        <p class="eyebrow">Sur commande</p>
+        <h2 class="h2" id="order-title"><span class="dance" data-dance>Une grosse</span><br><span class="dance" data-dance>faim ?</span></h2>
+      </div>
+      <div>
+        <p>Pains en quantité, viennoiseries pour une réunion à deux pas de la Cité des Congrès, galettes en janvier : on prépare sur commande. Passez en boutique ou appelez-nous quelques jours avant.</p>
+        <div class="order__cta">
+          <a class="btn" href="tel:+33970669583">09 70 66 95 83</a>
+          <a class="btn btn--ghost" href="mailto:contact@boulangeriemata.fr">Écrire un mail</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INFOS ============ -->
+  <section class="info" id="infos" aria-labelledby="info-title">
+    <div class="wrap info__grid">
+      <div class="info__head">
+        <div>
+          <p class="eyebrow">Infos pratiques</p>
+          <h2 class="h2" id="info-title" style="margin-top:20px"><span class="dance" data-dance>Passez nous voir.</span></h2>
+        </div>
+        <div class="rating">
+          <b>4,5</b>
+          <span><span class="stars" aria-hidden="true">★★★★★</span><br>Note moyenne sur Google</span>
+        </div>
+      </div>
+
+      <div class="card card--addr">
+        <h3>Adresse</h3>
+        <address>6 rue de Rieux<br>44000 Nantes</address>
+        <p class="sub">Quartier Champ de Mars, face à la Cité des Congrès. Vente à emporter.</p>
+        <div class="contact">
+          <a href="tel:+33970669583">09 70 66 95 83</a>
+          <a href="mailto:contact@boulangeriemata.fr">contact@boulangeriemata.fr</a>
+          <a href="https://www.instagram.com/boulangeriemata/" target="_blank" rel="noopener">Instagram @boulangeriemata</a>
+        </div>
+      </div>
+
+      <div class="card card--hours">
+        <h3>Horaires</h3>
+        <ul class="hours hours--full" data-hours>
+          <li data-day="1"><span>Lundi</span><b>6h30 – 19h45</b></li>
+          <li data-day="2"><span>Mardi</span><b>6h30 – 19h45</b></li>
+          <li data-day="3"><span>Mercredi</span><b>6h30 – 19h45</b></li>
+          <li data-day="4"><span>Jeudi</span><b>6h30 – 19h45</b></li>
+          <li data-day="5"><span>Vendredi</span><b>6h30 – 19h45</b></li>
+          <li data-day="6"><span>Samedi</span><b>7h00 – 19h00</b></li>
+          <li data-day="0"><span>Dimanche</span><b>Fermé</b></li>
+        </ul>
+        <ul class="hours hours--compact" data-hours>
+          <li data-days="1,2,3,4,5"><span>Lun → Ven</span><b>6h30 – 19h45</b></li>
+          <li data-days="6"><span>Samedi</span><b>7h00 – 19h00</b></li>
+          <li data-days="0"><span>Dimanche</span><b>Fermé</b></li>
+        </ul>
+        <p class="status" data-status><i></i><b>Horaires</b></p>
+      </div>
+
+      <figure class="info__photo reveal-img"><img data-sizes="(max-width: 1080px) 92vw, 30vw" src="assets/img/facade.webp" alt="Façade de Mata Boulangerie, rue de Rieux" loading="lazy" width="1080" height="1350"></figure>
+
+      <div class="info__map">
+        <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=MATA+Boulangerie+6+Rue+de+Rieux+Nantes" target="_blank" rel="noopener" aria-label="Ouvrir Mata Boulangerie dans Google Maps">
+          <picture>
+            <source media="(max-width: 680px)" type="image/avif" srcset="assets/img/r/plan-800.avif">
+            <source media="(max-width: 680px)" type="image/webp" srcset="assets/img/r/plan-800.webp">
+            <source type="image/avif" srcset="assets/img/r/plan-1600.avif">
+            <img class="map__img" src="assets/img/r/plan-1600.webp" alt="Plan du quartier : Mata Boulangerie au 6 rue de Rieux, entre le Champ de Mars, la Cité des Congrès et la Loire" width="1600" height="640" loading="lazy" decoding="async" fetchpriority="low">
+          </picture>
+          <span class="map__pin" aria-hidden="true"><span class="map__tag">Mata<small>6 rue de Rieux</small></span></span>
+        </a>
+        <div class="map__actions">
+          <a class="btn btn--sm" href="https://www.google.com/maps/dir/?api=1&amp;destination=MATA+Boulangerie+6+Rue+de+Rieux+Nantes" target="_blank" rel="noopener">Itinéraire
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12 12 4M5 4h7v7"/></svg></a>
+          <a class="btn btn--sm btn--light" href="https://www.google.com/maps/search/?api=1&amp;query=MATA+Boulangerie+6+Rue+de+Rieux+Nantes" target="_blank" rel="noopener">Google Maps</a>
+        </div>
+        <small class="map__credit">© contributeurs OpenStreetMap</small>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft__top">
+      <p class="ft__claim">Boulangerie biologique au levain naturel. Nantes.</p>
+      <div>
+        <h3>Boutique</h3>
+        <p>6 rue de Rieux<br>44000 Nantes<br>Lun–Ven 6h30–19h45<br>Sam 7h–19h</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p><a href="tel:+33970669583">09 70 66 95 83</a><br><a href="mailto:contact@boulangeriemata.fr">contact@boulangeriemata.fr</a><br><a href="https://www.instagram.com/boulangeriemata/" target="_blank" rel="noopener">Instagram</a></p>
+      </div>
+    </div>
+    <div class="ft__logo logo" data-wobble aria-hidden="true"><!--LOGO--></div>
+    <div class="ft__bottom">
+      <span>© <span data-year>2026</span> Mata Boulangerie</span>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <span>Site : <a href="https://vokumagency.com" target="_blank" rel="noopener">VOKUM</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Barre d'action mobile -->
+<div class="mbar" data-mbar>
+  <span class="status" data-status><i></i><b>Horaires</b></span>
+  <a class="call" href="tel:+33970669583">Appeler</a>
+  <a class="go" href="https://www.google.com/maps/dir/?api=1&amp;destination=MATA+Boulangerie+6+Rue+de+Rieux+Nantes" target="_blank" rel="noopener">Itinéraire</a>
+</div>
+</body>
+</html>

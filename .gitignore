@@ -1,0 +1,22 @@
+.DS_Store
+.vercel
+node_modules
+# sources lourdes / temporaires (régénérables)
+_source/ig/
+_source/lighthouse/
+_source/map-tiles/
+_source/before/
+_source/mask.npy
+_source/map-full.png
+_source/sel.jpg
+_source/sheet*.jpg
+_source/*pre-optim*
+_source/patch*.py
+_source/devices.html
+_source/tablet.html
+_source/sizes.html
+_source/screens.html
+_source/laptop.html
+_source/logotest.html
+_source/mobile.html
+_source/_mobile-test.html
