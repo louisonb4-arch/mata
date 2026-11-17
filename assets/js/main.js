@@ -353,7 +353,7 @@
     const tilt = [-3, 3, 2, -3, -2, 3];
     const lift = [0, 14, 0, 14, 0, 14];
     phs.forEach((p, i) => gsap.set(p, { zIndex: phs.length - i }));
-    const deal = gsap.timeline({ scrollTrigger: { trigger: phs[0], start: 'top 68%', end: 'top 8%', scrub: 0.6, invalidateOnRefresh: true } });
+    const deal = gsap.timeline({ scrollTrigger: { trigger: phs[0], start: 'top 92%', end: 'top 38%', scrub: 0.6, invalidateOnRefresh: true } });
     phs.forEach((p, i) => {
       deal.fromTo(p,
         { x: () => pileOffset(p, 'x'), y: () => pileOffset(p, 'y'), rotation: () => rand(-14, 14), scale: 0.92 },
@@ -374,7 +374,7 @@
       drop();
       if (was) return;
       e.stopPropagation();
-      if (deal.scrollTrigger.progress < 0.98) return;
+      if (deal.scrollTrigger.progress < 0.95) return; // distribution terminée dès que la 1re rangée est à l'écran
       const r = p.getBoundingClientRect();
       lifted = p;
       p.classList.add('is-lifted');

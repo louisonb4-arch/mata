@@ -14,11 +14,14 @@ Site statique (HTML/CSS/JS), déployable tel quel sur Vercel.
 - Code postal : 44000 (registre SIRENE) vs 44200 (Google).
 - Prix sandwichs : article La Toque (juil. 2026) + étiquettes vitrine — à confirmer.
 - Section « Sur commande » : formulations à valider (galettes, plateaux).
-- Mentions légales : forme juridique, directeur de publication.
+- Mentions légales : remplies depuis l'annuaire des entreprises (MONSIEUR PAIN SARL, gérant Charles-Henry Mata) — à faire confirmer.
+- Médiateur de la consommation : le client doit en désigner un, puis l'ajouter aux mentions légales.
+- Domaine : boulangeriemata.fr appartient déjà au client (mails Google Workspace, aucun site) — idéal pour le site.
 - Domaine + og:image en URL absolue une fois le domaine connu.
 
 ## Performance (nov. 2026)
 - Build : `python3 _source/build.py` (logo inline, images <picture> AVIF/WebP, CSS minifié inliné, JS en un seul bundle chargé après l'affichage).
 - Nouvelles photos : déposer le master dans `_source/img-master/` puis `python3 _source/make_images.py`.
 - Mesures Lighthouse : `_source/lh.sh <port> <label>` puis `python3 _source/lh_report.py <label>` (rapports dans `_source/lighthouse`).
-- `vercel.json` : cache long sur `/assets`.
+- `vercel.json` : cache long sur `/assets`, en-têtes de sécurité (CSP, nosniff, Referrer-Policy…).
+- Images : AVIF q38 / WebP q64 au-delà de 800 px (≈ 1,1 Mo d'images sur toute la page). `_source/audit.sh [url]` : contrôle HTTP de la prod.

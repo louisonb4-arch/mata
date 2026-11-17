@@ -1,5 +1,5 @@
 # Génère les variantes responsive (AVIF + WebP) depuis les masters
-import os, glob, shutil
+import os, glob, shutil, re
 from PIL import Image
 os.chdir(os.path.expanduser('~/Developer/clients/mata-site'))
 MASTER = '_source/img-master'
@@ -11,8 +11,10 @@ for f in glob.glob('assets/img/*.webp'):
     if not os.path.exists(dst): shutil.copy2(f, dst)
     if os.path.basename(f) not in KEEP: os.remove(f)
 total = 0
+USED = set(re.findall(r'assets/img/([a-z\-]+)\.webp', open('_source/index.src.html').read()))
 for f in sorted(glob.glob(f'{MASTER}/*.webp')):
     name = os.path.basename(f)[:-5]
+    if name not in USED: continue  # master non utilisée par le site
     im = Image.open(f).convert('RGB')
     done = set()
     for w in (480, 640, 800, 1200):
@@ -21,8 +23,9 @@ for f in sorted(glob.glob(f'{MASTER}/*.webp')):
         done.add(ww)
         h = round(im.height * ww / im.width)
         r = im.resize((ww, h), Image.LANCZOS) if ww != im.width else im
-        r.save(f'{OUT}/{name}-{ww}.webp', 'WEBP', quality=72, method=6)
-        r.save(f'{OUT}/{name}-{ww}.avif', 'AVIF', quality=52, speed=4)
+        # grandes tailles plus compressées : invisible à l'œil (contrôle visuel nov. 2026), -30 % de poids
+        r.save(f'{OUT}/{name}-{ww}.webp', 'WEBP', quality=64 if ww >= 800 else 70, method=6)
+        r.save(f'{OUT}/{name}-{ww}.avif', 'AVIF', quality=38 if ww >= 800 else 44, speed=4)
 for f in glob.glob(f'{OUT}/*'): total += os.path.getsize(f)
 print('variants', len(glob.glob(f'{OUT}/*')), 'total MB', round(total / 1e6, 2))
 for n in ('hero-pain', 'miche'):

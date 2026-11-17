@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page introuvable — Mata Boulangerie</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#ffed99">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/assets/css/style.min.css">
+  <style>
+    .nf { min-height: 100svh; display: grid; place-items: center; text-align: center; background: var(--butter); padding: 40px 20px; }
+    .nf__num { font-family: var(--f-display); font-size: clamp(120px, 28vw, 300px); line-height: .85; margin: 0; }
+    .nf h1 { font-family: var(--f-display); font-weight: 400; text-transform: uppercase; font-size: clamp(28px, 5vw, 48px); line-height: 1; margin: 18px 0 14px; }
+    .nf p { max-width: 34ch; margin: 0 auto 28px; }
+    .nf__actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <main class="nf">
+    <div>
+      <p class="nf__num" aria-hidden="true">404</p>
+      <h1>Cette fournée n'existe pas</h1>
+      <p>La page demandée a été déplacée ou n'a jamais existé. Le pain, lui, vous attend au 6 rue de Rieux.</p>
+      <div class="nf__actions">
+        <a class="btn" href="/">Retour à l'accueil</a>
+        <a class="btn btn--ghost" href="/#infos">Horaires &amp; accès</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

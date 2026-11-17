@@ -1,0 +1,14 @@
+# Mata Boulangerie
+
+> Boulangerie biologique au levain naturel, 6 rue de Rieux, 44000 Nantes (quartier Champ de Mars, à deux pas de la Cité des Congrès). Pains au levain, viennoiseries maison, pâtisserie boulangère et casse-croûte du midi.
+
+## Infos pratiques
+- Adresse : 6 rue de Rieux, 44000 Nantes
+- Téléphone : 09 70 66 95 83
+- E-mail : contact@boulangeriemata.fr
+- Horaires : du lundi au vendredi 6h30–19h45, le samedi 7h–19h, fermé le dimanche
+- Instagram : https://www.instagram.com/boulangeriemata/
+
+## Pages
+- [Accueil](https://mata-site-steel.vercel.app/) : le pain, les rayons du comptoir, le casse-croûte du midi, l'histoire du fournil, les commandes, horaires et accès
+- [Mentions légales](https://mata-site-steel.vercel.app/mentions-legales)

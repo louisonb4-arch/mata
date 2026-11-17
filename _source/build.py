@@ -18,10 +18,12 @@ html = html.replace('<!--LOGO-->', mata + '<div class="logo__sub">' + boul + '</
 # --- images responsive ---
 def variants(name, ext):
     out = []
-    for f in sorted(glob.glob(f'assets/img/r/{name}-*.{ext}'), key=lambda x: int(re.search(r'-(\d+)\.', x).group(1))):
-        w = int(re.search(r'-(\d+)\.', f).group(1))
-        out.append((w, f))
-    return out
+    # nom exact + largeur : « pains » ne doit pas attraper « pains-speciaux »
+    pat = re.compile(rf'^{re.escape(name)}-(\d+)\.{ext}$')
+    for f in glob.glob(f'assets/img/r/{name}-*.{ext}'):
+        m = pat.match(os.path.basename(f))
+        if m: out.append((int(m.group(1)), f))
+    return sorted(out)
 
 def picture(m):
     sizes, name, rest = m.group(1), m.group(2), m.group(3)
